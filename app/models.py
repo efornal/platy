@@ -10,33 +10,37 @@ from __future__ import unicode_literals
 from django.db import models
 
 
-class Careers(models.Model):
-    institute = models.ForeignKey('Institutes', models.DO_NOTHING)
-    descripcion = models.CharField(max_length=-1)
-
-    class Meta:
-        managed = False
-        db_table = 'careers'
-
-
 class Doctypes(models.Model):
+    id = models.AutoField( primary_key=True,null=False)
     abreviatura = models.CharField(max_length=4, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'doctypes'
 
-
+        
 class Institutes(models.Model):
+    id = models.AutoField( primary_key=True,null=False)
     descripcion = models.CharField(max_length=-1)
     nombre_corto = models.CharField(max_length=8)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'institutes'
+
+        
+class Careers(models.Model):
+    id = models.AutoField( primary_key=True,null=False)
+    institute = models.ForeignKey('Institutes', models.DO_NOTHING)
+    descripcion = models.CharField(max_length=-1)
+
+    class Meta:
+        managed = True
+        db_table = 'careers'
 
 
 class Orders(models.Model):
+    id = models.AutoField( primary_key=True,null=False)
     nro_expediente = models.CharField(max_length=-1, blank=True, null=True)
     doctype = models.ForeignKey(Doctypes, models.DO_NOTHING, blank=True, null=True)
     documento = models.CharField(max_length=10, blank=True, null=True)
@@ -61,11 +65,12 @@ class Orders(models.Model):
     apellido_canonico = models.CharField(max_length=50)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'orders'
 
 
 class Users(models.Model):
+    id = models.AutoField( primary_key=True,null=False)
     doctype = models.ForeignKey(Doctypes, models.DO_NOTHING, blank=True, null=True)
     documento = models.IntegerField()
     nombre = models.CharField(max_length=100)
@@ -74,5 +79,5 @@ class Users(models.Model):
     hashed_password = models.CharField(max_length=40)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'users'

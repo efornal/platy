@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.9/ref/settings/
 """
 
 import os
+from django.utils.translation import ugettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -61,6 +62,7 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
+            'debug': True,
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
@@ -111,7 +113,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es'
+
+LANGUAGES = (
+  ('es', _('Spanish')),
+  ('en', _('English')),
+)
 
 TIME_ZONE = 'UTC'
 
@@ -126,3 +133,67 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOCALE_PATHS = (
+     BASE_DIR + '/locale', )
+
+# django configuration
+SUIT_CONFIG = {
+    'ADMIN_NAME': 'Platy'
+}
+
+# =================================\
+# ldap configuration
+LDAP_SERVER = 'ldap://ldap.intranet:389'
+
+LDAP_DN = 'dc=rectorado,dc=unl,dc=edu,dc=ar'
+# Organizational Unit for Person
+LDAP_PEOPLE = 'People'
+# =================================/
+
+# =================================\
+# django ldap configuration
+import ldap
+from django_auth_ldap.config import LDAPSearch, GroupOfNamesType
+
+import logging
+logger = logging.getLogger('django_auth_ldap')
+logger.addHandler(logging.StreamHandler())
+logger.setLevel(logging.DEBUG)
+
+AUTH_LDAP_SERVER_URI = LDAP_SERVER
+
+AUTH_LDAP_USER_SEARCH = LDAPSearch("ou=%s,%s" % (LDAP_PEOPLE,LDAP_DN),
+                                   ldap.SCOPE_SUBTREE, "(uid=%(user)s)")
+AUTH_LDAP_USER_ATTR_MAP = {
+    "first_name": "givenName",
+    "last_name": "sn",
+    "email": "mail"
+}
+
+AUTHENTICATION_BACKENDS = (
+    'django_auth_ldap.backend.LDAPBackend',
+    'django.contrib.auth.backends.ModelBackend',
+)
+# =================================/
+
+
+# database logging
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'level': 'DEBUG',
+#             'class': 'logging.StreamHandler',
+#         }
+#     },
+#     'loggers': {
+#         'django.db.backends': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG',
+#         },
+#     }
+# }
+
+

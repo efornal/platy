@@ -32,7 +32,7 @@ class OrderAdmin(admin.ModelAdmin):
                     ,'institute_short_name','career')
     search_fields = ['documento', 'nombre', 'apellido']
     ordering = ('apellido','nombre', 'documento')
-
+    list_filter = ('apellido','documento','nro_expediente')
     
 # # Register your models here.
 admin.site.register(Institute, InstituteAdmin)

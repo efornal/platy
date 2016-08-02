@@ -30,9 +30,9 @@ class InstituteAdmin(admin.ModelAdmin):
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('surname_and_name','documento','nro_expediente'
                     ,'institute_short_name','career')
-    search_fields = ['documento', 'nombre', 'apellido']
+    search_fields = ['apellido','nombre','documento']
     ordering = ('apellido','nombre', 'documento')
-    list_filter = ('apellido','documento','nro_expediente')
+
     
 # # Register your models here.
 admin.site.register(Institute, InstituteAdmin)

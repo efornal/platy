@@ -16,7 +16,8 @@ import logging
 
 class Doctype(models.Model):
     id = models.AutoField( primary_key=True,null=False)
-    abreviatura = models.CharField(max_length=4, blank=True, null=True)
+    abreviatura = models.CharField(max_length=4, blank=True, null=True,
+                                   verbose_name=_('abbreviation'))
 
     class Meta:
         managed = False
@@ -30,8 +31,10 @@ class Doctype(models.Model):
     
 class Institute(models.Model):
     id = models.AutoField( primary_key=True,null=False)
-    descripcion = models.TextField( null=True, blank=True )
-    nombre_corto = models.CharField(max_length=8)
+    descripcion = models.TextField( null=True, blank=True,
+                                   verbose_name=_('description') )
+    nombre_corto = models.CharField(max_length=8,
+                                   verbose_name=_('short_name'))
 
     class Meta:
         managed = False
@@ -45,8 +48,10 @@ class Institute(models.Model):
     
 class Career(models.Model):
     id = models.AutoField( primary_key=True,null=False)
-    institute = models.ForeignKey(Institute,models.DO_NOTHING, default=0)
-    descripcion = models.TextField( null=True, blank=True )
+    institute = models.ForeignKey(Institute,models.DO_NOTHING, default=0,
+                                   verbose_name=_('institute'))
+    descripcion = models.TextField( null=True, blank=True,
+                                   verbose_name=_('description'))
     
     class Meta:
         managed = False
@@ -55,33 +60,55 @@ class Career(models.Model):
         verbose_name_plural = _('Careers')
 
     def __unicode__(self):
-        return "%s" % (self.id)
+        return "%s" % (self.descripcion)
+
+    institute.short_description = _("institute")
 
 
 class Order(models.Model):
     id = models.AutoField( primary_key=True,null=False)
-    nro_expediente = models.TextField( null=True, blank=True )
-    doctype = models.ForeignKey(Doctype, models.DO_NOTHING, blank=True, null=True)
-    documento = models.CharField(max_length=10, blank=True, null=True)
-    apellido = models.CharField(max_length=50)
-    nombre = models.CharField(max_length=50)
-    career = models.ForeignKey(Career, models.DO_NOTHING, default=0)
-    registro_facultad = models.CharField(max_length=50)
-    registro_universidad = models.CharField(max_length=50)
-    libro = models.IntegerField(blank=True, null=True)
-    pagina = models.IntegerField(blank=True, null=True)
-    tomo = models.IntegerField()
-    fecha_ultimo_examen = models.DateField(blank=True, null=True)
-    fecha_entrada = models.DateField(blank=True, null=True)
-    fecha_pase_imprenta = models.DateField(blank=True, null=True)
-    fecha_expedicion = models.DateField()
-    nro_resolucion = models.CharField(max_length=150, blank=True, null=True)
-    fecha_pase_facultad = models.DateField(blank=True, null=True)
-    nro_envio = models.TextField( null=True, blank=True )
-    fecha_regreso = models.DateField(blank=True, null=True)
-    fecha_devolucion = models.DateField(blank=True, null=True)
-    observaciones = models.TextField(blank=True, null=True)
-    apellido_canonico = models.CharField(max_length=50)
+    nro_expediente = models.TextField( null=True, blank=True ,
+                                   verbose_name=_('expedient_number'))
+    doctype = models.ForeignKey(Doctype, models.DO_NOTHING, blank=True, null=True,
+                                   verbose_name=_('document_type'))
+    documento = models.CharField(max_length=10, blank=True, null=True,
+                                   verbose_name=_('document_number'))
+    apellido = models.CharField(max_length=50,
+                                   verbose_name=_('surname'))
+    nombre = models.CharField(max_length=50,
+                                   verbose_name=_('name'))
+    career = models.ForeignKey(Career, models.DO_NOTHING, default=0,
+                                   verbose_name=_('career'))
+    registro_facultad = models.CharField(max_length=50,
+                                   verbose_name=_('faculty_registration'))
+    registro_universidad = models.CharField(max_length=50,
+                                   verbose_name=_('university_registration'))
+    libro = models.IntegerField(blank=True, null=True,
+                                   verbose_name=_('book'))
+    pagina = models.IntegerField(blank=True, null=True,
+                                   verbose_name=_('page'))
+    tomo = models.IntegerField(verbose_name=_('volume'))
+    fecha_ultimo_examen = models.DateField(blank=True, null=True,
+                                   verbose_name=_('last_exam_date'))
+    fecha_entrada = models.DateField(blank=True, null=True,
+                                   verbose_name=_('entry_date'))
+    fecha_pase_imprenta = models.DateField(blank=True, null=True,
+                                   verbose_name=_('printing_pass_date'))
+    fecha_expedicion = models.DateField(verbose_name=_('expedition_date'))
+    nro_resolucion = models.CharField(max_length=150, blank=True, null=True,
+                                   verbose_name=_('resolution_number'))
+    fecha_pase_facultad = models.DateField(blank=True, null=True,
+                                   verbose_name=_('faculty_pass_date'))
+    nro_envio = models.TextField( null=True, blank=True,
+                                   verbose_name=_('delivery_number'))
+    fecha_regreso = models.DateField(blank=True, null=True,
+                                   verbose_name=_('return_date'))
+    fecha_devolucion = models.DateField(blank=True, null=True,
+                                   verbose_name=_('devolution_date'))
+    observaciones = models.TextField(blank=True, null=True,
+                                   verbose_name=_('observations'))
+    apellido_canonico = models.CharField(max_length=50,
+                                   verbose_name=_('canonical_name'))
 
     class Meta:
         managed = False
@@ -90,17 +117,34 @@ class Order(models.Model):
         verbose_name_plural = _('Orders')
 
     def __unicode__(self):
-        return "%s" % (self.id)
+        return "%s" % (self.nro_expediente)
 
+    def surname_and_name(self):
+        return "%s, %s" % (self.apellido, self.nombre)
+    surname_and_name.short_description= _('surname_and_name')
+
+    def institute_description(self):
+        return "%s" % self.career.institute.descripcion
+    institute_description.short_description= _('institute_description')
+
+    def institute_short_name(self):
+        return "%s" % self.career.institute.nombre_corto
+    institute_short_name.short_description= _('institute_short_name')
     
+#    FIXME usuario deberia ser usuario de django!?
 class User(models.Model):
     id = models.AutoField( primary_key=True,null=False)
-    doctype = models.ForeignKey(Doctype, models.DO_NOTHING, blank=True, null=True)
-    documento = models.IntegerField()
-    nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=50)
-    usuario = models.CharField(unique=True, max_length=15)
-    hashed_password = models.CharField(max_length=40)
+    doctype = models.ForeignKey(Doctype, models.DO_NOTHING, blank=True, null=True,
+                                   verbose_name=_('document_type'))
+    documento = models.IntegerField(verbose_name=_('document'))
+    nombre = models.CharField(max_length=100,
+                                   verbose_name=_('name'))
+    apellido = models.CharField(max_length=50,
+                                   verbose_name=_('surname'))
+    usuario = models.CharField(unique=True, max_length=15,
+                                   verbose_name=_('username'))
+    hashed_password = models.CharField(max_length=40,
+                                   verbose_name=_('hashed_password'))
 
     class Meta:
         managed = False

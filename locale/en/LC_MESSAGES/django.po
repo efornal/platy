@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-08-02 11:05+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: app/models.py:20
+msgid "abbreviation"
+msgstr "abbreviation"
+
+#: app/models.py:25
+msgid "Doctype"
+msgstr "Doctype"
+
+#: app/models.py:26
+msgid "Doctypes"
+msgstr "Doctypes"
+
+#: app/models.py:35 app/models.py:54
+msgid "description"
+msgstr "Description"
+
+#: app/models.py:37
+msgid "short_name"
+msgstr "Short name"
+
+#: app/models.py:42
+msgid "Institute"
+msgstr "Institute"
+
+#: app/models.py:43
+msgid "Institutes"
+msgstr "Institutes"
+
+#: app/models.py:52 app/models.py:65
+msgid "institute"
+msgstr "Institute"
+
+#: app/models.py:59
+msgid "Career"
+msgstr "Career"
+
+#: app/models.py:60
+msgid "Careers"
+msgstr "Careers"
+
+#: app/models.py:71
+msgid "expedient_number"
+msgstr "Expedient number"
+
+#: app/models.py:73 app/models.py:138
+msgid "document_type"
+msgstr "Document type"
+
+#: app/models.py:75
+msgid "document_number"
+msgstr "Document number"
+
+#: app/models.py:77 app/models.py:143
+msgid "surname"
+msgstr "Surname"
+
+#: app/models.py:79 app/models.py:141
+msgid "name"
+msgstr "Name"
+
+#: app/models.py:81
+msgid "career"
+msgstr "Career"
+
+#: app/models.py:83
+msgid "faculty_registration"
+msgstr "Faculty registration"
+
+#: app/models.py:85
+msgid "university_registration"
+msgstr "University registration"
+
+#: app/models.py:87
+msgid "book"
+msgstr "Book"
+
+#: app/models.py:89
+msgid "page"
+msgstr "Page"
+
+#: app/models.py:90
+msgid "volume"
+msgstr "Volume"
+
+#: app/models.py:92
+msgid "last_exam_date"
+msgstr "Last exam date"
+
+#: app/models.py:94
+msgid "entry_date"
+msgstr "Entry date"
+
+#: app/models.py:96
+msgid "printing_pass_date"
+msgstr "Printing pass date"
+
+#: app/models.py:97
+msgid "expedition_date"
+msgstr "Expedition date"
+
+#: app/models.py:99
+msgid "resolution_number"
+msgstr "Resolution number"
+
+#: app/models.py:101
+msgid "faculty_pass_date"
+msgstr "Faculty pass date"
+
+#: app/models.py:103
+msgid "delivery_number"
+msgstr "Delivery number"
+
+#: app/models.py:105
+msgid "return_date"
+msgstr "Return date"
+
+#: app/models.py:107
+msgid "devolution_date"
+msgstr "Devolution date"
+
+#: app/models.py:109
+msgid "observations"
+msgstr "Observations"
+
+#: app/models.py:111
+msgid "canonical_name"
+msgstr "Canonical name"
+
+#: app/models.py:116
+msgid "Order"
+msgstr "Order"
+
+#: app/models.py:117
+msgid "Orders"
+msgstr "Orders"
+
+#: app/models.py:124
+msgid "surname_and_name"
+msgstr "Surname and name"
+
+#: app/models.py:128
+msgid "institute_description"
+msgstr "Institute"
+
+#: app/models.py:132
+msgid "institute_short_name"
+msgstr "Institute"
+
+#: app/models.py:139
+msgid "document"
+msgstr "Document"
+
+#: app/models.py:145
+msgid "username"
+msgstr "Username"
+
+#: app/models.py:147
+msgid "hashed_password"
+msgstr "Hashed password"
+
+#: app/models.py:152
+msgid "User"
+msgstr "User"
+
+#: app/models.py:153
+msgid "Users"
+msgstr "Users"
+
+#: platy/settings.py:119
+msgid "Spanish"
+msgstr "Spanish"
+
+#: platy/settings.py:120
+msgid "English"
+msgstr "English"

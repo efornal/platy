@@ -39,4 +39,4 @@ admin.site.register(Institute, InstituteAdmin)
 admin.site.register(Doctype, DoctypeAdmin)
 admin.site.register(Career, CareerAdmin)
 admin.site.register(Order, OrderAdmin)
-admin.site.register(User)
+

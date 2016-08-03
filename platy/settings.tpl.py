@@ -149,9 +149,9 @@ SUIT_CONFIG = {
 
 # =================================\
 # ldap configuration
-LDAP_SERVER = 'ldap://ldap.intranet:389'
+LDAP_SERVER = 'ldap://ldap-host.intranet:389'
 
-LDAP_DN = 'dc=rectorado,dc=unl,dc=edu,dc=ar'
+LDAP_DN = 'dc=domain,dc=edu,dc=ar'
 # Organizational Unit for Person
 LDAP_PEOPLE = 'People'
 # =================================/

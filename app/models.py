@@ -129,27 +129,3 @@ class Order(models.Model):
         return "%s" % self.career.institute.nombre_corto
     institute_short_name.short_description= _('institute_short_name')
 
-    
-#    FIXME User use django, eliminate in the future
-class User(models.Model):
-    id = models.AutoField( primary_key=True,null=False)
-    doctype = models.ForeignKey(Doctype, models.DO_NOTHING, blank=True, null=True,
-                                   verbose_name=_('document_type'))
-    documento = models.IntegerField(verbose_name=_('document'))
-    nombre = models.CharField(max_length=100,
-                                   verbose_name=_('name'))
-    apellido = models.CharField(max_length=50,
-                                   verbose_name=_('surname'))
-    usuario = models.CharField(unique=True, max_length=15,
-                                   verbose_name=_('username'))
-    hashed_password = models.CharField(max_length=40,
-                                   verbose_name=_('hashed_password'))
-
-    class Meta:
-        managed = True 
-        db_table = 'users'
-        verbose_name = _('User')
-        verbose_name_plural = _('Users')
-
-    def __unicode__(self):
-        return "%s" % (self.id)

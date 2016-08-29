@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-29 11:37+0000\n"
+"POT-Creation-Date: 2016-08-29 14:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,175 +21,155 @@ msgstr ""
 msgid "abbreviation"
 msgstr "abbreviation"
 
-#: app/models.py:25
+#: app/models.py:24
 msgid "Doctype"
 msgstr "Doctype"
 
-#: app/models.py:26
+#: app/models.py:25
 msgid "Doctypes"
 msgstr "Doctypes"
 
-#: app/models.py:35 app/models.py:54
+#: app/models.py:34 app/models.py:52
 msgid "description"
 msgstr "Description"
 
-#: app/models.py:37
+#: app/models.py:36
 msgid "short_name"
 msgstr "Short name"
 
-#: app/models.py:42
+#: app/models.py:40
 msgid "Institute"
 msgstr "Institute"
 
-#: app/models.py:43
+#: app/models.py:41
 msgid "Institutes"
 msgstr "Institutes"
 
-#: app/models.py:52 app/models.py:65
+#: app/models.py:50 app/models.py:62
 msgid "institute"
 msgstr "Institute"
 
-#: app/models.py:59
+#: app/models.py:56
 msgid "Career"
 msgstr "Career"
 
-#: app/models.py:60
+#: app/models.py:57
 msgid "Careers"
 msgstr "Careers"
 
-#: app/models.py:71
+#: app/models.py:68
 msgid "expedient_number"
 msgstr "Expedient number"
 
-#: app/models.py:73 app/models.py:140
+#: app/models.py:70
 msgid "document_type"
 msgstr "Document type"
 
-#: app/models.py:75
+#: app/models.py:72
 msgid "document_number"
 msgstr "Document number"
 
-#: app/models.py:77 app/models.py:145
+#: app/models.py:74
 msgid "surname"
 msgstr "Surname"
 
-#: app/models.py:79 app/models.py:143
+#: app/models.py:76
 msgid "name"
 msgstr "Name"
 
-#: app/models.py:81
+#: app/models.py:78
 msgid "career"
 msgstr "Career"
 
-#: app/models.py:83
+#: app/models.py:80
 msgid "faculty_registration"
 msgstr "Faculty registration"
 
-#: app/models.py:85
+#: app/models.py:82
 msgid "university_registration"
 msgstr "University registration"
 
-#: app/models.py:87
+#: app/models.py:84
 msgid "book"
 msgstr "Book"
 
-#: app/models.py:89
+#: app/models.py:86
 msgid "page"
 msgstr "Page"
 
-#: app/models.py:91
+#: app/models.py:88
 msgid "volume"
 msgstr "Volume"
 
-#: app/models.py:93
+#: app/models.py:90
 msgid "last_exam_date"
 msgstr "Last exam date"
 
-#: app/models.py:95
+#: app/models.py:92
 msgid "entry_date"
 msgstr "Entry date"
 
-#: app/models.py:97
+#: app/models.py:94
 msgid "printing_pass_date"
 msgstr "Printing pass date"
 
-#: app/models.py:98
+#: app/models.py:96
 msgid "expedition_date"
 msgstr "Expedition date"
 
-#: app/models.py:100
+#: app/models.py:98
 msgid "resolution_number"
 msgstr "Resolution number"
 
-#: app/models.py:102
+#: app/models.py:100
 msgid "faculty_pass_date"
 msgstr "Faculty pass date"
 
-#: app/models.py:104
+#: app/models.py:102
 msgid "delivery_number"
 msgstr "Delivery number"
 
-#: app/models.py:106
+#: app/models.py:104
 msgid "return_date"
 msgstr "Return date"
 
-#: app/models.py:108
+#: app/models.py:106
 msgid "devolution_date"
 msgstr "Devolution date"
 
-#: app/models.py:110
+#: app/models.py:108
 msgid "observations"
 msgstr "Observations"
 
-#: app/models.py:112
+#: app/models.py:110
 msgid "canonical_name"
 msgstr "Canonical name"
 
-#: app/models.py:117
+#: app/models.py:114
 msgid "Order"
 msgstr "Order"
 
-#: app/models.py:118
+#: app/models.py:115
 msgid "Orders"
 msgstr "Orders"
 
-#: app/models.py:125
+#: app/models.py:122
 msgid "surname_and_name"
 msgstr "Surname and name"
 
-#: app/models.py:129
+#: app/models.py:126
 msgid "institute_description"
 msgstr "Institute"
 
-#: app/models.py:133
+#: app/models.py:130
 msgid "institute_short_name"
 msgstr "Institute"
 
-#: app/models.py:141
-msgid "document"
-msgstr "Document"
-
-#: app/models.py:147
-msgid "username"
-msgstr "Username"
-
-#: app/models.py:149
-msgid "hashed_password"
-msgstr "Hashed password"
-
-#: app/models.py:154
-msgid "User"
-msgstr "User"
-
-#: app/models.py:155
-msgid "Users"
-msgstr "Users"
-
-#: platy/settings.py:119 platy/settings.tpl.py:119
+#: platy/settings.tpl.py:119
 msgid "Spanish"
 msgstr "Spanish"
 
-#: platy/settings.py:120 platy/settings.tpl.py:120
+#: platy/settings.tpl.py:120
 msgid "English"
 msgstr "English"
 

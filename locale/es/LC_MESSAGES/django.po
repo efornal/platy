@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-02 11:05+0000\n"
+"POT-Creation-Date: 2016-08-29 11:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,7 +62,7 @@ msgstr "Carreras"
 msgid "expedient_number"
 msgstr "Nro expediente"
 
-#: app/models.py:73 app/models.py:138
+#: app/models.py:73 app/models.py:140
 msgid "document_type"
 msgstr "Tipo Documento"
 
@@ -70,11 +70,11 @@ msgstr "Tipo Documento"
 msgid "document_number"
 msgstr "Nro documento"
 
-#: app/models.py:77 app/models.py:143
+#: app/models.py:77 app/models.py:145
 msgid "surname"
 msgstr "Apellido"
 
-#: app/models.py:79 app/models.py:141
+#: app/models.py:79 app/models.py:143
 msgid "name"
 msgstr "Nombre"
 
@@ -98,98 +98,118 @@ msgstr "Libro"
 msgid "page"
 msgstr "Página"
 
-#: app/models.py:90
+#: app/models.py:91
 msgid "volume"
 msgstr "Tomo"
 
-#: app/models.py:92
+#: app/models.py:93
 msgid "last_exam_date"
 msgstr "Fecha último exámen"
 
-#: app/models.py:94
+#: app/models.py:95
 msgid "entry_date"
 msgstr "Fecha entrada"
 
-#: app/models.py:96
+#: app/models.py:97
 msgid "printing_pass_date"
 msgstr "Fecha pase imprenta"
 
-#: app/models.py:97
+#: app/models.py:98
 msgid "expedition_date"
 msgstr "Fecha expedición"
 
-#: app/models.py:99
+#: app/models.py:100
 msgid "resolution_number"
 msgstr "Nro resolución"
 
-#: app/models.py:101
+#: app/models.py:102
 msgid "faculty_pass_date"
 msgstr "Fecha pase facultad"
 
-#: app/models.py:103
+#: app/models.py:104
 msgid "delivery_number"
 msgstr "Nro envío"
 
-#: app/models.py:105
+#: app/models.py:106
 msgid "return_date"
 msgstr "Fecha regreso"
 
-#: app/models.py:107
+#: app/models.py:108
 msgid "devolution_date"
 msgstr "Fecha devolución"
 
-#: app/models.py:109
+#: app/models.py:110
 msgid "observations"
 msgstr "Observaciones"
 
-#: app/models.py:111
+#: app/models.py:112
 msgid "canonical_name"
 msgstr "Apellido canónico"
 
-#: app/models.py:116
+#: app/models.py:117
 msgid "Order"
 msgstr "Pedido"
 
-#: app/models.py:117
+#: app/models.py:118
 msgid "Orders"
 msgstr "Pedidos"
 
-#: app/models.py:124
+#: app/models.py:125
 msgid "surname_and_name"
 msgstr "Apellido y nombre"
 
-#: app/models.py:128
+#: app/models.py:129
 msgid "institute_description"
 msgstr "Facultad"
 
-#: app/models.py:132
+#: app/models.py:133
 msgid "institute_short_name"
 msgstr "Facultad"
 
-#: app/models.py:139
+#: app/models.py:141
 msgid "document"
 msgstr "Documento"
 
-#: app/models.py:145
+#: app/models.py:147
 msgid "username"
 msgstr "Apellido"
 
-#: app/models.py:147
+#: app/models.py:149
 msgid "hashed_password"
 msgstr "Contraseña encriptada"
 
-#: app/models.py:152
+#: app/models.py:154
 msgid "User"
 msgstr "Usuario"
 
-#: app/models.py:153
+#: app/models.py:155
 msgid "Users"
 msgstr "Usuarios"
 
-#: platy/settings.py:119
+#: platy/settings.py:119 platy/settings.tpl.py:119
 msgid "Spanish"
 msgstr "Español"
 
-#: platy/settings.py:120
+#: platy/settings.py:120 platy/settings.tpl.py:120
 msgid "English"
 msgstr "Inglés"
+
+#: templates/admin/base.html:68
+msgid "Welcome,"
+msgstr "Bienvenido"
+
+#: templates/admin/base.html:77
+msgid "Documentation"
+msgstr "Documentación"
+
+#: templates/admin/base.html:80
+msgid "Change password"
+msgstr "Cambiar Contraseña"
+
+#: templates/admin/base.html:82
+msgid "Log out"
+msgstr "Salir"
+
+#: templates/admin/base.html:102
+msgid "Home"
+msgstr "Inicio"

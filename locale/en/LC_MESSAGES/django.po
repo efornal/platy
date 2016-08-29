@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-29 14:50+0000\n"
+"POT-Creation-Date: 2016-08-29 15:04+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -165,11 +165,11 @@ msgstr "Institute"
 msgid "institute_short_name"
 msgstr "Institute"
 
-#: platy/settings.tpl.py:119
+#: platy/settings.py:119 platy/settings.tpl.py:119
 msgid "Spanish"
 msgstr "Spanish"
 
-#: platy/settings.tpl.py:120
+#: platy/settings.py:120 platy/settings.tpl.py:120
 msgid "English"
 msgstr "English"
 

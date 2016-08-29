@@ -16,11 +16,10 @@ import logging
 
 class Doctype(models.Model):
     id = models.AutoField( primary_key=True,null=False)
-    abreviatura = models.CharField(max_length=4, blank=True, null=True,
+    abreviatura = models.CharField(max_length=4,  null=False,
                                    verbose_name=_('abbreviation'))
 
     class Meta:
-        managed = False
         db_table = 'doctypes'
         verbose_name = _('Doctype')
         verbose_name_plural = _('Doctypes')
@@ -31,13 +30,12 @@ class Doctype(models.Model):
     
 class Institute(models.Model):
     id = models.AutoField( primary_key=True,null=False)
-    descripcion = models.TextField( null=True, blank=True,
+    descripcion = models.TextField( null=False,
                                    verbose_name=_('description') )
     nombre_corto = models.CharField(max_length=8,
                                    verbose_name=_('short_name'))
 
     class Meta:
-        managed = False
         db_table = 'institutes'
         verbose_name = _('Institute')
         verbose_name_plural = _('Institutes')
@@ -50,11 +48,10 @@ class Career(models.Model):
     id = models.AutoField( primary_key=True,null=False)
     institute = models.ForeignKey(Institute,models.DO_NOTHING, default=0,
                                    verbose_name=_('institute'))
-    descripcion = models.TextField( null=True, blank=True,
+    descripcion = models.TextField( null=False,
                                    verbose_name=_('description'))
     
     class Meta:
-        managed = False
         db_table = 'careers'
         verbose_name = _('Career')
         verbose_name_plural = _('Careers')
@@ -67,15 +64,15 @@ class Career(models.Model):
 
 class Order(models.Model):
     id = models.AutoField( primary_key=True,null=False)
-    nro_expediente = models.TextField( null=True, blank=True ,
+    nro_expediente = models.TextField( null=False,
                                    verbose_name=_('expedient_number'))
-    doctype = models.ForeignKey(Doctype, models.DO_NOTHING, blank=True, null=True,
+    doctype = models.ForeignKey(Doctype, models.DO_NOTHING, null=False,
                                    verbose_name=_('document_type'))
-    documento = models.CharField(max_length=10, blank=True, null=True,
+    documento = models.CharField(max_length=10, null=False,
                                    verbose_name=_('document_number'))
-    apellido = models.CharField(max_length=50,
+    apellido = models.CharField(max_length=50, null=False,
                                    verbose_name=_('surname'))
-    nombre = models.CharField(max_length=50,
+    nombre = models.CharField(max_length=50, null=False,
                                    verbose_name=_('name'))
     career = models.ForeignKey(Career, models.DO_NOTHING, default=0,
                                    verbose_name=_('career'))
@@ -87,14 +84,16 @@ class Order(models.Model):
                                    verbose_name=_('book'))
     pagina = models.IntegerField(blank=True, null=True,
                                    verbose_name=_('page'))
-    tomo = models.IntegerField(verbose_name=_('volume'))
+    tomo = models.IntegerField(blank=True, null=True,
+                               verbose_name=_('volume'))
     fecha_ultimo_examen = models.DateField(blank=True, null=True,
                                    verbose_name=_('last_exam_date'))
     fecha_entrada = models.DateField(blank=True, null=True,
                                    verbose_name=_('entry_date'))
     fecha_pase_imprenta = models.DateField(blank=True, null=True,
                                    verbose_name=_('printing_pass_date'))
-    fecha_expedicion = models.DateField(verbose_name=_('expedition_date'))
+    fecha_expedicion = models.DateField(blank=True, null=True,
+                                        verbose_name=_('expedition_date'))
     nro_resolucion = models.CharField(max_length=150, blank=True, null=True,
                                    verbose_name=_('resolution_number'))
     fecha_pase_facultad = models.DateField(blank=True, null=True,
@@ -107,11 +106,10 @@ class Order(models.Model):
                                    verbose_name=_('devolution_date'))
     observaciones = models.TextField(blank=True, null=True,
                                    verbose_name=_('observations'))
-    apellido_canonico = models.CharField(max_length=50,
+    apellido_canonico = models.CharField(max_length=50, blank=True, null=True,
                                    verbose_name=_('canonical_name'))
 
     class Meta:
-        managed = False
         db_table = 'orders'
         verbose_name = _('Order')
         verbose_name_plural = _('Orders')

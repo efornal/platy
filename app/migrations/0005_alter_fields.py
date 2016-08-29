@@ -16,136 +16,22 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='career',
             name='institute',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.DO_NOTHING, to='app.Institute', verbose_name='Facultad'),
+            field=models.ForeignKey(default=0,
+                                    on_delete=django.db.models.deletion.DO_NOTHING,
+                                    to='app.Institute', verbose_name='Facultad'),
         ),
         migrations.AddField(
             model_name='order',
             name='career',
-            field=models.ForeignKey(default=0, on_delete=django.db.models.deletion.DO_NOTHING, to='app.Career', verbose_name='Carrera'),
+            field=models.ForeignKey(default=0,
+                                    on_delete=django.db.models.deletion.DO_NOTHING,
+                                    to='app.Career', verbose_name='Carrera'),
         ),
         migrations.AddField(
             model_name='order',
             name='doctype',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.DO_NOTHING, to='app.Doctype', verbose_name='Tipo Documento'),
-        ),
-        migrations.AlterField(
-            model_name='career',
-            name='descripcion',
-            field=models.TextField(blank=True, null=True, verbose_name='Descripci\xf3n'),
-        ),
-        migrations.AlterField(
-            model_name='doctype',
-            name='abreviatura',
-            field=models.CharField(blank=True, max_length=4, null=True, verbose_name='abreviatura'),
-        ),
-        migrations.AlterField(
-            model_name='institute',
-            name='descripcion',
-            field=models.TextField(blank=True, null=True, verbose_name='Descripci\xf3n'),
-        ),
-        migrations.AlterField(
-            model_name='institute',
-            name='nombre_corto',
-            field=models.CharField(max_length=8, verbose_name='Nombre Corto'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='apellido',
-            field=models.CharField(max_length=50, verbose_name='Apellido'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='apellido_canonico',
-            field=models.CharField(max_length=50, verbose_name='Apellido can\xf3nico'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='documento',
-            field=models.CharField(blank=True, max_length=10, null=True, verbose_name='Nro documento'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='fecha_devolucion',
-            field=models.DateField(blank=True, null=True, verbose_name='Fecha devoluci\xf3n'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='fecha_entrada',
-            field=models.DateField(blank=True, null=True, verbose_name='Fecha entrada'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='fecha_expedicion',
-            field=models.DateField(verbose_name='Fecha expedici\xf3n'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='fecha_pase_facultad',
-            field=models.DateField(blank=True, null=True, verbose_name='Fecha pase facultad'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='fecha_pase_imprenta',
-            field=models.DateField(blank=True, null=True, verbose_name='Fecha pase imprenta'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='fecha_regreso',
-            field=models.DateField(blank=True, null=True, verbose_name='Fecha regreso'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='fecha_ultimo_examen',
-            field=models.DateField(blank=True, null=True, verbose_name='Fecha \xfaltimo ex\xe1men'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='libro',
-            field=models.IntegerField(blank=True, null=True, verbose_name='Libro'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='nombre',
-            field=models.CharField(max_length=50, verbose_name='Nombre'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='nro_envio',
-            field=models.TextField(blank=True, null=True, verbose_name='Nro env\xedo'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='nro_expediente',
-            field=models.TextField(blank=True, null=True, verbose_name='Nro expediente'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='nro_resolucion',
-            field=models.CharField(blank=True, max_length=150, null=True, verbose_name='Nro resoluci\xf3n'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='observaciones',
-            field=models.TextField(blank=True, null=True, verbose_name='Observaciones'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='pagina',
-            field=models.IntegerField(blank=True, null=True, verbose_name='P\xe1gina'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='registro_facultad',
-            field=models.CharField(max_length=50, verbose_name='Registro Facultad'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='registro_universidad',
-            field=models.CharField(max_length=50, verbose_name='Registro Universidad'),
-        ),
-        migrations.AlterField(
-            model_name='order',
-            name='tomo',
-            field=models.IntegerField(verbose_name='Tomo'),
+            field=models.ForeignKey(blank=True, null=True,
+                                    on_delete=django.db.models.deletion.DO_NOTHING,
+                                    to='app.Doctype', verbose_name='Tipo Documento'),
         ),
     ]

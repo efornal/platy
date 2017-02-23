@@ -83,11 +83,19 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'diplomas_db',
+        'USER': 'diplomas_user',
+        'PASSWORD': 'user',
+        'PORT': '5432',
+        'HOST': 'localhost',
+    },
+    'platy_owner': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'diplomas_db',
         'USER': 'diplomas_owner',
         'PASSWORD': 'owner',
         'PORT': '5432',
         'HOST': 'localhost',
-    }
+    },
 }
 
 

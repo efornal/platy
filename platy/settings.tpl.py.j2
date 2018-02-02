@@ -25,7 +25,7 @@ APPLICATION_DESC= "{{ app_desc|capitalize }}"
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'c6#*z%gd%@x!9yy2xz3tzg_)^t=$jd6c34)ca!b2zua8ar(^13'
+SECRET_KEY = '{{ django_secret_key }}'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = {{ app_debug }}
